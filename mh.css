@@ -66,11 +66,14 @@ input, button{
 }
 
 #Todos {
+    margin-right: 60px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
     margin-top: 1rem;
+    overflow: auto;
+    height: 600px;
 }
 #Todos img {
     border-radius: 8px;
@@ -78,4 +81,19 @@ input, button{
 }
 #Todos img:hover {
     transform: scale(1.1);
+}
+
+.contenedor-monstruo {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    width: 120px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background-image: url("MH-icon-holder.png");
+    background-size: cover;
+    background-position: center;
+
 }

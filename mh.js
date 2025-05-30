@@ -140,13 +140,10 @@ window.addEventListener('DOMContentLoaded', function () {
 
                     monstruos.forEach(monstruo => {
                         const contenedor = document.createElement('div');
-                        contenedor.style.display = 'inline-block';
-                        contenedor.style.margin = '10px';
-                        contenedor.style.textAlign = 'center';
-                        contenedor.style.cursor = 'pointer';
+                        contenedor.classList.add('contenedor-monstruo');
 
                         contenedor.innerHTML = `
-                            <img src="${monstruo.icono}" alt="${monstruo.nombre}" style="width: 80px; height: 80px;">
+                            <img src="${monstruo.icono}" alt="${monstruo.nombre}" style="width: 70px; height: 70px;">
                             <p style="margin-top: 5px;">${monstruo.nombre}</p>
                         `;
 
