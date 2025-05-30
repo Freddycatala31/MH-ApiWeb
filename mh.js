@@ -124,15 +124,20 @@ window.addEventListener('DOMContentLoaded', function () {
 
                 function cargarTodosLosMonstruos() {
                     let divTodos = document.getElementById('Todos');
+                    let loader = document.getElementById('loader');
+
+                    loader.style.display = 'flex';
 
                     fetch('https://monsterhunterapi.onrender.com/mhapi/monstruos/')
                         .then(res => res.json())
                         .then(monstruos => {
                             mostrarTodos(monstruos);
+                            loader.style.display = 'none';
                         })
                         .catch(error => {
                             console.error('Error cargando monstruos:', error);
                             divTodos.innerHTML = '<p>Error al cargar la lista de monstruos.</p>';
+                            loader.style.display = 'none';
                         });
                 }
 
@@ -170,4 +175,9 @@ window.addEventListener('DOMContentLoaded', function () {
                     <p><strong>No Existe</strong></p>
                 `;
             }
+
+
+
+
+
         });

@@ -2,11 +2,12 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     padding: 2rem;
-    background-color: #f2f2f2;
+    background-color: #0e0d0d;
     margin: auto;
     background-image: url("MH-bg-1.png");
     background-size: cover;
     background-repeat: no-repeat;
+
 }
 
 input, button{
@@ -97,3 +98,33 @@ input, button{
     background-position: center;
 
 }
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("loading_back.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content:end;
+    align-items:end;
+    z-index: 9999;
+}
+
+#loader img {
+    width: 200px;
+    height: auto;
+}
+
+#loader h1{
+    color: white;
+    font-size: 2rem;
+    margin-right: 50px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+
