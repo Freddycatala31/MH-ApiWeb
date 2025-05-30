@@ -3,6 +3,10 @@ window.addEventListener('DOMContentLoaded', function () {
             let inputMonstruo = document.getElementById('numeroMonstruo');
             let imgMonstruo = document.getElementById('imagenMonstruo');
             let divInfo = document.getElementById('infoMonstruo');
+            let divNombre = document.getElementById('cajaNombreMonstruo');
+            let divTodos = document.getElementById('Todos');
+
+            cargarTodosLosMonstruos();
 
             btnPeticion.addEventListener('click', pedirMonstruo);
 
@@ -100,9 +104,15 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
                 // Dentro HTML
-                    divInfo.innerHTML = `
-                        <p><strong>${id}</strong></p>
+
+                    divNombre.innerHTML = `
+                    <p><strong>${id}</strong></p>
                         <p><strong>${nombre}</strong></p>
+                    `;
+
+
+                    divInfo.innerHTML = `
+                        
                         <p><strong>${clase}</strong></p>
                         ${elementoHTML}
                         ${estadoHTML}
@@ -112,11 +122,46 @@ window.addEventListener('DOMContentLoaded', function () {
                     `;
     }
 
+                function cargarTodosLosMonstruos() {
+                    let divTodos = document.getElementById('Todos');
+
+                    fetch('https://monsterhunterapi.onrender.com/mhapi/monstruos/')
+                        .then(res => res.json())
+                        .then(monstruos => {
+                            mostrarTodos(monstruos);
+                        })
+                        .catch(error => {
+                            console.error('Error cargando monstruos:', error);
+                            divTodos.innerHTML = '<p>Error al cargar la lista de monstruos.</p>';
+                        });
+                }
+
+                function mostrarTodos(monstruos) {
+
+                    monstruos.forEach(monstruo => {
+                        const contenedor = document.createElement('div');
+                        contenedor.classList.add('contenedor-monstruo');
+
+                        contenedor.innerHTML = `
+                            <img src="${monstruo.icono}" alt="${monstruo.nombre}" style="width: 70px; height: 70px;">
+                            <p style="margin-top: 5px;">${monstruo.nombre}</p>
+                        `;
+
+                        // Seleccion de monstruo
+                        contenedor.addEventListener('click', () => {
+                            inputMonstruo.value = monstruo.nombre; 
+                            pedirMonstruo();
+                        });
+
+                        divTodos.appendChild(contenedor);
+                    });
+                }
+
 
 
 
             function mostrarError() {
-                let urlImagen = `https://media.tenor.com/tumf9em1c9AAAAAM/dancing-focas.gif`;
+                let urlImagen = `https://static.wixstatic.com/media/90eef9_8f9354233de34c37a9445f7c535bd7b7~mv2.gif`;
 
                 imgMonstruo.src = urlImagen;
                 imgMonstruo.alt = "Monstruo no encontrado";
