@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Monstruario</title>
     <link rel="stylesheet" href="mh.css">
     <script src="mh.js"></script>
+    <link rel="icon" href="icono.png">
 </head>
-<body>
 
-    <body>
+    <body id="bodyPrin">
 
         <div id="loader">
             <h1>Cargando...</h1>
@@ -19,8 +19,15 @@
 
         <div id="hojasIzquierda">
 
+            <div id="navbar">
             <input id="numeroMonstruo" placeholder="Nombre del monstruo">
             <button id="btnPedir">Buscar monstruo</button>
+            <div id="cajaTrampa">
+            <a href="juego.html"><img id="trampa" src="trampa.png" alt="Caza"></a>
+            </div>
+            </div>
+
+
             <br><br>
             <div id="Todos"></div>
 
@@ -33,10 +40,13 @@
             <div id="cajaNombreMonstruo"></div>
             <img id="imagenMonstruo" src="" alt="">
             <div id="infoMonstruo"></div>
-            <div id="cajaElemento"></div>
-            <div id="cajaEstado"></div>
-            <div id="cajaDebilidad"></div>
-            <div id="cajaTamaño"></div>
+            <div id="infoContenedor">
+                <div id="cajaElemento"></div>
+                <div id="cajaEstado"></div>
+                <div id="cajaDebilidad"></div>
+            </div>
+                <div id="cajaTamanio"></div>
+ 
 
             
 
