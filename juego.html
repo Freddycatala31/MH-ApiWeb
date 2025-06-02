@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Monsterdle</title>
+  <link rel="stylesheet" href="mh.css" />
+  <script defer src="juego.js"></script>
+      <link rel="icon" href="icono.png">
+</head>
+<body id="juegoBody">
+  <div id="hoja">
+    <img src="MH-bg-2.png" alt="Fondo"/>
+    <div id="buscador">
+      <img id="imagenMonstruo" src="loading.gif" alt="Cargando...">
+      <input id="respuestaMonstruo" list="listaMonstruos" placeholder="Nombre">
+      <datalist id="listaMonstruos"></datalist>
+      <button id="verificar">Verificar</button>
+      <img id="emojiFeedback" src="st_small_845x845-pad_1000x1000_f8f8f8.u2-removebg-preview.png" alt="">
+      <p id="feedback"></p>
+      <div id="cajaTrampa">
+        <a href="mh.html">
+          <img id="trampa" src="Icono-Piel_Naranja.png" alt="Caza">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Imagen decorativa fija en la esquina inferior izquierda -->
+  <img id="decoracionEsquina" src="abajo-removebg-preview.png" alt="Decoración esquina">
+</body>
+</html>

@@ -4,6 +4,10 @@ window.addEventListener('DOMContentLoaded', function () {
             let imgMonstruo = document.getElementById('imagenMonstruo');
             let divInfo = document.getElementById('infoMonstruo');
             let divNombre = document.getElementById('cajaNombreMonstruo');
+            let divElementos = document.getElementById('cajaElemento');
+            let divEstados = document.getElementById('cajaEstado');
+            let divDebilidades = document.getElementById('cajaDebilidad');
+            let divTamanios = document.getElementById('cajaTamanio');
             let divTodos = document.getElementById('Todos');
 
             cargarTodosLosMonstruos();
@@ -114,9 +118,28 @@ window.addEventListener('DOMContentLoaded', function () {
                     divInfo.innerHTML = `
                         
                         <p><strong>${clase}</strong></p>
+    
+                    `;
+                    divElementos.innerHTML = `
+                        
+
                         ${elementoHTML}
+
+                    `;
+                    divEstados.innerHTML = `
+                        
+
                         ${estadoHTML}
+
+                    `;
+                    divDebilidades.innerHTML = `
+                        
+
                         ${debilidadHTML}
+
+                    `;
+                    divTamanios.innerHTML = `
+
                         <p><strong>Tamaño mínimo:</strong> ${minSize}</p>
                         <p><strong>Tamaño máximo:</strong> ${maxSize}</p>
                     `;
@@ -166,18 +189,53 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
             function mostrarError() {
-                let urlImagen = `https://static.wixstatic.com/media/90eef9_8f9354233de34c37a9445f7c535bd7b7~mv2.gif`;
+                let urlImagen = `noexist.gif`;
 
                 imgMonstruo.src = urlImagen;
                 imgMonstruo.alt = "Monstruo no encontrado";
 
                 divInfo.innerHTML = `
-                    <p><strong>No Existe</strong></p>
+                    <p><strong>No Encontrado</strong></p>
                 `;
+
+                divNombre.innerHTML = `
+                    <p></p>
+                `;
+                divInfo.innerHTML = `
+                        
+                        <p><strong>No Encontrado</strong></p>
+    
+                    `;
+                    divElementos.innerHTML = `
+                        
+
+                        <p></p>
+
+                    `;
+                    divEstados.innerHTML = `
+                        
+
+                        <p></p>
+
+                    `;
+                    divDebilidades.innerHTML = `
+                        
+
+                        <p></p>
+
+                    `;
+                    divTamanios.innerHTML = `
+
+                        <p></p>
+                    `;
             }
+
+                
 
 
 
 
 
         });
+
+        
